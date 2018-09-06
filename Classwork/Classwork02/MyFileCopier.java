@@ -1,16 +1,10 @@
 // import copiersupport.*;
 import java.util.Scanner;
+import java.io.IOException;
 
 public class MyFileCopier {
 
-	Scanner sc = new Scanner( System.in );
-	String fileName;
-
-	public static void main( String[] args ) {
-		
-		System.out.println( "Please enter a file name" );
-		fileName = sc.nextLine();
-		System.out.println( "user input: " + fileName );
+	public static void main( String[] args ) throws IOException {
 
 	}
 }
