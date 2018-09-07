@@ -1,10 +1,25 @@
-// import copiersupport.*;
+import copiersupport.*;
 import java.util.Scanner;
 import java.io.IOException;
 
 public class MyFileCopier {
 
-	public static void main( String[] args ) throws IOException {
+   private static Scanner sc = new Scanner( System.in );
+   private static String fileName;
+   static String content;
 
-	}
+   public static void main(String[] args) {
+      
+      System.out.println( "Please enter the name of the file you'd like to copy" );
+      fileName = sc.nextLine();
+
+      try {
+         SourceFile sf = new SourceFile( fileName );
+         content = sf.getContent();
+
+         TargetFile tf = new TargetFile( fileName, content );
+      } catch( IOException ioe ) { // THIS DOESNT WORK FOR SOME REASON
+
+      }
+   }
 }
