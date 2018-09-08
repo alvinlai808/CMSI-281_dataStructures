@@ -10,11 +10,13 @@ public class HighArray {
 
    public boolean find( long searchKey ) {
       int j;
+
       for( j = 0; j < nElems; j++ ) {
          if( a[j] == searchKey ) {
             break;
          } 
       }
+
       if( j == nElems ) {
          return false;
       } else {
@@ -29,12 +31,13 @@ public class HighArray {
 
    public boolean delete( long value ) {
       int j;
+
       for( j = 0; j < nElems; j++ ) {
          if( value == a[j] ) {
             break;
          }
-         
       }
+
       if( j == nElems ) {
          return false;
       } else {
@@ -50,6 +53,24 @@ public class HighArray {
       for( int j = 0; j < nElems; j++ ) {
          System.out.println( a[j] + " " );
       }
+
       System.out.println( "" );
+   }
+
+   public long getMax() {
+      long max = 0;
+
+      if( a == null ) {
+         return -1;
+      }
+
+      for( int j = 0; j < nElems; j++ ) {
+         if( a[j] > max ) {
+            max = a[j];
+         }
+      }
+
+      System.out.println( "The max value in the array is: " + max );
+      return max;
    }
 }
