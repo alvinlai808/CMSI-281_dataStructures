@@ -73,4 +73,15 @@ public class HighArray {
       System.out.println( "The max value in the array is: " + max );
       return max;
    }
+
+   // create new array arrNoDups
+   // put UNIQUE elements from original array (arr) into arrNoDups
+      // as you loop thru arr, check if any elements are duplicates
+         // if duplicate, skip over
+         // else, add to arrNoDups
+   //*** start w null arrNoDups, add index before inputing unique element
+   //*** LOOK INTO ARRAYLISTS
+   public void noDups() {
+
+   }
 }
