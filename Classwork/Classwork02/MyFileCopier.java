@@ -13,13 +13,9 @@ public class MyFileCopier {
       System.out.println( "Please enter the name of the file you'd like to copy" );
       fileName = sc.nextLine();
 
-      try {
-         SourceFile sf = new SourceFile( fileName );
-         content = sf.getContent();
+      SourceFile sf = new SourceFile( fileName );
+      content = sf.getContent();
 
-         TargetFile tf = new TargetFile( fileName, content );
-      } catch( IOException ioe ) { // THIS DOESNT WORK FOR SOME REASON
-
-      }
+      TargetFile tf = new TargetFile( fileName, content );
    }
 }
