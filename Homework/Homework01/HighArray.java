@@ -78,6 +78,15 @@ public class HighArray {
 
    // ripped from https://stackoverflow.com/questions/14656208/array-of-unique-elements/14656222
    public void noDups() {
+      int numDups = -1;
+      for( int i = 0; i < nElems; i++ ) {
+         for( int j = i + 1; j < nElems; j++ ) {
+            if( a[i] == a[j + 1] ) {
+               numDups++;
+            }
+         }
+      }
       a = LongStream.of( a ).distinct().toArray();
+      nElems -= numDups;
    }
 }
