@@ -1,3 +1,7 @@
+/*
+ * Main function that tests methods for high-level array interface
+ */
+
 public class HighArrayApp {
 
    public static void main( String[] args ) {
@@ -25,6 +29,7 @@ public class HighArrayApp {
       System.out.println( "---------------------------------" );
 
       // test noDups()
+      System.out.println( "Testing noDups()" );
       arr.noDups();
       arr.display();
 
