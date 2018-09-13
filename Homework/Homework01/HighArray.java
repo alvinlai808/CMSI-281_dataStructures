@@ -1,3 +1,5 @@
+import java.util.stream.*;
+
 public class HighArray {
 
    private long[] a;
@@ -74,23 +76,8 @@ public class HighArray {
       return max;
    }
 
-   // create new array arrNoDups
-   // put UNIQUE elements from original array (arr) into arrNoDups
-      // as you loop thru arr, check if any elements are duplicates
-         // if duplicate, skip over
-         // else, add to arrNoDups
-   //*** start w null arrNoDups, add index before inputing unique element
-   //*** LOOK INTO ARRAYLISTS
+   // ripped from https://stackoverflow.com/questions/14656208/array-of-unique-elements/14656222
    public void noDups() {
-      for( int i = 0; i < nElems; i++ ) {
-         for( int j = i + 1; j < nElems; j++ ) {
-            // System.out.println(a[i]);
-            // System.out.println(a[j]);
-            // System.out.println("--------------");
-            if( a[i] == a[j + 1] ) {
-               a[j + 1] = 0;
-            }
-         }
-      }
+      a = LongStream.of( a ).distinct().toArray();
    }
 }
