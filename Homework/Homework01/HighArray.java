@@ -1,3 +1,7 @@
+/*
+ * Includes multiple methods for arrays with a high-level interface
+ */
+
 import java.util.stream.*;
 
 public class HighArray {
@@ -76,9 +80,12 @@ public class HighArray {
       return max;
    }
 
-   // ripped from https://stackoverflow.com/questions/14656208/array-of-unique-elements/14656222
+   // counts the number of duplicates in array
+   // uses stream to keep unique elements in array
+   // adjust number of elements based on number of duplicates found
    public void noDups() {
       int numDups = -1;
+
       for( int i = 0; i < nElems; i++ ) {
          for( int j = i + 1; j < nElems; j++ ) {
             if( a[i] == a[j + 1] ) {
@@ -86,6 +93,7 @@ public class HighArray {
             }
          }
       }
+
       a = LongStream.of( a ).distinct().toArray();
       nElems -= numDups;
    }
