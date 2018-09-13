@@ -82,6 +82,15 @@ public class HighArray {
    //*** start w null arrNoDups, add index before inputing unique element
    //*** LOOK INTO ARRAYLISTS
    public void noDups() {
-
+      for( int i = 0; i < nElems; i++ ) {
+         for( int j = i + 1; j < nElems; j++ ) {
+            // System.out.println(a[i]);
+            // System.out.println(a[j]);
+            // System.out.println("--------------");
+            if( a[i] == a[j + 1] ) {
+               a[j + 1] = 0;
+            }
+         }
+      }
    }
 }
