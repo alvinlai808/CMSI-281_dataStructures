@@ -1,3 +1,7 @@
+/*
+ * Contains the skeleton of IntList.java
+ */
+
 public interface IntListInterface {
    int getValueAtIndex( int index );
    boolean append( int valueToAdd );
