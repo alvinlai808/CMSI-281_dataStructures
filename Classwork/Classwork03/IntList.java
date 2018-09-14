@@ -1,3 +1,5 @@
+import java.util.stream.*;
+
 public class IntList implements IntListInterface {
    private int[] theList;
    private int   size;
@@ -32,18 +34,28 @@ public class IntList implements IntListInterface {
    }
 
    // we've gotta have this to actually get things to compile
-   public boolean insertValueAtIndex( int value, int index ) {
-   //    if( index >= STARTING_SIZE ) {
-   //       int[] expandList = new int[theList.length + STARTING_SIZE];
-   //       for( int i = 0; i < theList.length; i++ ) {
-   //          expandList[i] = theList[i];
-   //          System.out.println( expandList[i] );
-   //       }
-   //       System.out.println( "----------");
-   //    }
-
-   //    return true;
-   // }
+   public boolean insertValueAtIndex( int value, int index ) throws ArrayIndexOutOfBoundsException {
+      if( index < 0 ) {
+         throw new ArrayIndexOutOfBoundsException( "index is out of bounds" );
+      } 
+      // else if( index == 0 ) {
+      //    prepend( value );
+      // } 
+      else if( index >= STARTING_SIZE ) {
+         int[] expandList = new int[theList.length + STARTING_SIZE];
+         for( int i = 0; i < theList.length; i++ ) {
+            expandList[i] = theList[i];
+         }
+         theList = IntStream.of( expandList ).toArray();
+         theList[index] = value;
+         size++;
+      } else {
+         theList[index] = value;
+         size++;
+         return true;
+      }
+      return false;
+   }
 
    public boolean checkIndex( int index ) {
       if( index >= 0 && index < theList.length ) {
