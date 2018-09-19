@@ -14,6 +14,7 @@ public class HighArray {
       nElems = 0;
    }
 
+   // tries to find a specific element in the array
    public boolean find( long searchKey ) {
       int j;
 
@@ -30,11 +31,13 @@ public class HighArray {
       }
    }
 
+   // appends an element to the array
    public void insert( long value ) {
       a[nElems] = value;
       nElems++;
    }
 
+   // removes an element from the array
    public boolean delete( long value ) {
       int j;
 
@@ -55,6 +58,7 @@ public class HighArray {
       }
    }
 
+   // displays all the elements in the array
    public void display() {
       for( int j = 0; j < nElems; j++ ) {
          System.out.println( a[j] + " " );
@@ -63,6 +67,7 @@ public class HighArray {
       System.out.println( "" );
    }
 
+   // returns the max value in the array
    public long getMax() {
       long max = 0;
 
