@@ -21,7 +21,7 @@ public class HighArrayApp {
 
       // test getMax()
       System.out.println( "TESTING getMax() METHOD");
-      
+
       arr.display();
       System.out.println( arr.getMax() );
       System.out.println( "Adding values..." );
@@ -97,7 +97,7 @@ public class HighArrayApp {
 
       // test noDups()
       System.out.println( "TESTING noDups() METHOD");  
-      System.out.println( "Adding values..." );    
+      System.out.println( "Adding duplicate values..." );    
       arr.insert(1);
       arr.insert(1);
       arr.insert(2);
@@ -109,8 +109,11 @@ public class HighArrayApp {
       arr.insert(5);
       arr.insert(5);
       arr.insert(6);
+      System.out.println( "Array with duplicates: " );
       arr.display();
+      System.out.println( "Removing duplicates..." );
       arr.noDups();
+      System.out.println( "Array without duplicates: ");
       arr.display();
       System.out.println( "noDups() TEST COMPLETE");
       System.out.println( "---------------------------------" );      
