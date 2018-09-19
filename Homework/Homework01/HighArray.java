@@ -76,7 +76,7 @@ public class HighArray {
          }
       }
 
-      System.out.println( "The max value in the array is: " + max );
+      System.out.print( "The max value in the array is: " );
       return max;
    }
 
@@ -84,7 +84,7 @@ public class HighArray {
    // uses stream to keep unique elements in array
    // adjust number of elements based on number of duplicates found
    public void noDups() {
-      int numDups = -1;
+      int numDups = 0;
 
       for( int i = 0; i < nElems; i++ ) {
          for( int j = i + 1; j < nElems; j++ ) {
