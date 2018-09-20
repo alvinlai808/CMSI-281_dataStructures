@@ -8,18 +8,18 @@ public class IntLinkedList {
       head = null;
       size = 0;
    }
-
+   //--------------------------------------------------------------
    public int getSize() {
       return size;
    }
-
+   //--------------------------------------------------------------
    public void prepend( int dataToAdd ) {
       Node currentHead = head;
       head = new Node( dataToAdd );
       head.next = currentHead;
       size++;
    }
-
+   //--------------------------------------------------------------
    private class Node {
 
       int data;            // remember this is an IntLinkedList
@@ -31,7 +31,7 @@ public class IntLinkedList {
          next = null;
       }
    }
-
+   //--------------------------------------------------------------
    public Iterator getIteratorAt( int index ) {
       if( (index > size) || (index < 0) ) {
          throw new IllegalArgumentException();
@@ -43,7 +43,7 @@ public class IntLinkedList {
       }
       return it;
    }
-
+   //--------------------------------------------------------------
    public class Iterator {
       private Node currentNode;
 
@@ -66,12 +66,28 @@ public class IntLinkedList {
       public int getCurrentInt() {
          return currentNode.data;
       }
-   }
 
-   // public void insertAt( int index, int data ) {
-   //    Iterator it = new Iterator();
-   //    Node n = new Node( data );
-   //    n = it.getIteratorAt( index ).next();
-   //    it.current().next() = n;
-   // }
+      public Node getCurrentNode() {
+         return currentNode;
+      }
+   }
+   //--------------------------------------------------------------
+   public void insertAt( int index, int data ) {
+      Iterator it = new Iterator();
+      it = getIteratorAt( index - 1 );
+      Node newNode = new Node( data );
+      Node currentNode = it.getCurrentNode();
+      newNode.next = currentNode.next;
+      currentNode.next = newNode;
+      size++;                   
+   }
+   //------------------------------------------------------------
+   public void removeAt( int index ) {
+      Iterator it = new Iterator();
+      it = getIteratorAt( index - 1 );
+      Node currentNode = it.getCurrentNode();
+      Node targetNode = currentNode.next.next;
+      currentNode.next = targetNode;
+      size--;
+   }
 }
