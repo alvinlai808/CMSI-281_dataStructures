@@ -1,3 +1,7 @@
+/*
+ * Tests methods from IntLinkedList.java
+ */
+
 public class IntLinkedListTester {
 
    public static void main( String[] args ) {
@@ -44,7 +48,7 @@ public class IntLinkedListTester {
       index = 4;
       myList.removeAt( index );      // Expect: remove 11
       System.out.println( "Removed node at index " + index );
-      
+
       System.out.println( "removeAt() TESTING COMPLETE" );
       System.out.println( "-------------------------------------" );
 
@@ -107,6 +111,8 @@ public class IntLinkedListTester {
       System.out.println( "Current Node is: " + myIt.getCurrentInt() );    // 13
       myIt.next();
       System.out.println( "Current Node is: " + myIt.getCurrentInt() );    // 5
+
+      System.out.println( "******* METHOD TESTS COMPLETE *******");
 
       //------------------------------------------------------------------------
 
